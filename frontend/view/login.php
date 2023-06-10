@@ -38,6 +38,8 @@
 
           <div class="my-3"></div>
           <span>No tienes cuenta? <a href="register.php">Regístrate</a></span> <br>
+          <div class="alert alert-danger" id="error" style="display: none;">
+          </div>
         </form>
 
       </div>
