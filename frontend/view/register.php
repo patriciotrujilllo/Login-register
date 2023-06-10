@@ -35,7 +35,7 @@
           <div class="d-grid">
             <button class="btn btn-primary" name="Registrar" type="submit" id="Registrar">Registrar</button>
           </div>
-
+          <div class="alert alert-danger" id="error" style="display: none;"></div>
         </form>
 
         <div class="my-3"></div>
