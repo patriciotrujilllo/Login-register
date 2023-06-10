@@ -20,29 +20,25 @@ if (!empty($_POST["Ingresar"])) {
             // Verify the password
             echo $password;
             if (password_verify($password, $db_password)) {
-                
+
                 $_SESSION['login'] = true;
                 $_SESSION['email'] = $email;
                 header("location:inicio.php");
-            } 
-            else {
+            } else {
                 echo "<div class='alert alert-danger' role='alert'>
                     La contraseña ingresada no es correcta!
                     </div>";
-                    
-                    echo $db_password;
+
+                echo $db_password;
             }
-        } 
-        else {
+        } else {
             echo "<div class='alert alert-danger' role='alert'>
                 Usuario o contraseña son incorrectos!
                 </div>";
         }
-    } 
-    else {
+    } else {
         echo "<div class='alert alert-danger' role='alert'>
             Faltaron campos por rellenar!
             </div>";
     }
 }
-?>
