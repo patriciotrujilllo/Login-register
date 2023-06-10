@@ -50,7 +50,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
   <script src="../controlador/userControler.js"></script>
-  <script src="./register.js"></script>
+  <script src="./form.js"></script>
 </body>
 
 </html>
