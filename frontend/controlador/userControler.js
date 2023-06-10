@@ -12,9 +12,11 @@ const login = (data) => {
             password: data.password
         }
     }).then(res => {
-        console.log(res);
+        window.location.href = "Home.php";
     }).catch(error => {
-        console.error(error);
+        document.querySelector('#error').style.display = "block";
+        document.querySelector('#error').textContent = error.response.data.error;
+        //console.error(error.response.data.error);
     })
 }
 const register = (data) => {
@@ -27,8 +29,9 @@ const register = (data) => {
             password: data.password
         }
     }).then(res => {
-        console.log(res);
+        window.location.href = "login.php";
     }).catch(error => {
-        console.error(error);
+        document.querySelector('#error').style.display = "block";
+        document.querySelector('#error').textContent = error.response.data.error;
     })
 }
