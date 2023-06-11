@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 header('Content-Type: application/json');
 require_once('../Modelo/userModel.php');
 
@@ -15,12 +15,15 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 "mensaje" => "Usuario autenticado",
                 "token" => sha1(uniqid(rand(), true))
             );
+            $_SESSION["token"] = $resultado['token'];
             setcookie("token", $resultado['token'], time() + (60 * 60 * 24 * 31), "/");
             setcookie("email", $usuario->getEmail(), time() + (60 * 60 * 24 * 31), "/");
             echo json_encode($resultado);
             exit;
         } else {
             http_response_code(401);
+            setcookie("token", "", time() - 1, "/");
+            setcookie("email", "", time() - 1, "/");
             echo json_encode(['error' => 'Credenciales inválidas.']);
             exit;
         }
