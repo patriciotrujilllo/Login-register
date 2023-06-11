@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 session_start();
 session_unset();
 session_destroy();
-header("location:login.php")
-
-?>
+setcookie("token", "", time() - 1, "/");
+setcookie("email", "", time() - 1, "/");
+header("location:./view/login.php");
