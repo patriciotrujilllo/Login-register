@@ -13,9 +13,10 @@ const login = (data) => {
         }
     }).then(res => {
         window.location.href = "Home.php";
+        console.log(res);
     }).catch(error => {
         document.querySelector('#error').style.display = "block";
-        document.querySelector('#error').textContent = error.response.data.error;
+        document.querySelector('#error').innerHTML = error.response.data.error;
         //console.error(error.response.data.error);
     })
 }
